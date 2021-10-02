@@ -2,7 +2,7 @@
 
 {% block content %}
 <style>
-        .privacy-ol {
+        .plan-ol {
             list-style: none;
             counter-reset: li;
         {% if request.MOBILE %}
@@ -10,7 +10,7 @@
         {% endif %}
         }
 
-        .privacy-li:before {
+        .plan-li:before {
             counter-increment: li;
             content: counters(li, ".") ". ";
         }
@@ -26,9 +26,12 @@
             background-attachment: fixed;
         }
 </style>
-    {% if not request.MOBILE %}
-<h1 style="margin: 70px; color: white; text-align: center;">Политика конфиденциальности</h1>
-<div style="background-color: white; padding: 20px 40px;">
-    {% else %}
-    <h2 style="margin: 10px; color: white; text-align: center;">Политика конфиденциальности</h2>
-    {% endblock %}
+{% if not request.MOBILE %}
+    <h1 style="margin: 70px; color: white; text-align: center;">РџР»Р°РЅ С€РєРѕР»С‹</h1>
+    <div style="background-color: white; padding: 20px 40px;">
+{% else %}
+    <h2 style="margin: 10px; color: white; text-align: center;">РџР»Р°РЅ С€РєРѕР»С‹</h2>
+    <div style="background-color: white; padding: 5px 10px; margin: 0 15px 0 15px; font-size: .7em;">
+{% endif %}
+ </div>
+{% endblock %}

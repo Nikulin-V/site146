@@ -7,4 +7,4 @@ from site_app import site
 @site.route('/school_plan')
 def school_plan():
     return render_template("site/school_plan.html",
-                           title="План школы")
+            title="План школы")
