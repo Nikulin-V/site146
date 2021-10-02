@@ -1,0 +1,14 @@
+SQLAlchemy
+Werkzeug
+WTForms
+Flask
+flask-admin
+flask-login
+flask-mail
+flask-migrate
+flask-mobility
+flask-socketio
+flask-sqlalchemy
+pymorphy2
+eventlet
+alembic
