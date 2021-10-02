@@ -1,0 +1,98 @@
+{% extends "site/base.html" %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ url('.static', filename='/css/profile.css') }}">
+    {% if not request.MOBILE %}
+        <h1 style="text-align: center">{{ title }}</h1>
+    {% else %}
+        <h3>{{ title }}</h3>
+    {% endif %}
+    <hr>
+    <form action="" method="post" id="profile-form">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.email.label }}<br>
+            {{ form.email(class="form-control", type="email", value=current_user.email) }}
+            {% for error in form.email.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.old_password.label }}<br>
+            {{ form.old_password(class="form-control", type="password") }}
+            {% for error in form.old_password.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.password.label }}<br>
+            {{ form.password(class="form-control", type="password") }}
+            {% for error in form.password.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.password_again.label }}<br>
+            {{ form.password_again(class="form-control", type="password") }}
+            {% for error in form.password_again.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.surname.label }}<br>
+            {{ form.surname(class="form-control", value=current_user.surname) }}
+            {% for error in form.surname.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.name.label }}<br>
+            {{ form.name(class="form-control", value=current_user.name) }}
+            {% for error in form.name.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </div>
+        <div>
+            {{ form.patronymic.label }}<br>
+            {{ form.patronymic(class="form-control", value=current_user.patronymic if current_user.patronymic else '') }}
+            {% for error in form.patronymic.errors %}
+                <p class="alert alert-danger" role="alert">
+                    {{ error }}
+                </p>
+            {% endfor %}
+        </div>
+        <div>{{ form.submit(type="submit", class="btn btn-info", value=btn_label) }}</div>
+    </form>
+    {% if message %}
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Сообщение от сайта</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {{ message }}
+                    </div>
+                    <div class="modal-footer" id="modal-ok-btn">
+                        <button type="button" class="btn btn-info">ОК</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="en">
+<!--suppress HtmlRequiredTitleElement-->
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+            integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+            crossorigin="anonymous"></script>
+    <script>
+        let socket = io(window.location.origin, {
+            secure: true,
+            transports: ["polling"]
+        });
+    </script>
+
+    <!-- APIs -->
+    <script src="{{ url('.static', filename='js/api/socket.js') }}"></script>
+    <script src="{{ url('.static', filename='js/api/users.js') }}"></script>
+
+    <!-- Google material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone"
+          rel="stylesheet">
+
+    {% block head %}
+        {% include "site/head.html" %}
+    {% endblock head %}
+    <title>{{ title }}</title>
+</head>
+<body>
+<header>
+    {% block header %}
+        {% if not request.MOBILE %}
+            {% include "site/header.html" %}
+        {% else %}
+            {% include "site/header_mobile.html" %}
+        {% endif %}
+    {% endblock header %}
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="container">
+    {% block content %}{% endblock content %}
+</main>
+<div id="notifications" class="position-fixed bottom-0 end-0 p-3" style="z-index: 11"></div>
+<footer class="copy-w3right footer mt-auto" {{ 'style=font-size:.8em' if request.MOBILE }}>
+    <div class="container">
+        <!--suppress SpellCheckingInspection -->
+        <p class="bottom-w3lnav" {{ 'style=padding-bottom:0;height:25px' if request.MOBILE }}>
+            <small>
+                Design by <a href="https://vk.com/vasil1y">Nikulin Vasily</a>
+            </small>
+        </p>
+        <p><small>© 2021 site. All Rights Reserved</small></p>
+    </div>
+</footer>
+<script src="{{ url('static', filename='js/scripts.js') }}"></script>
+<script src="https://use.fontawesome.com/df966d76e1.js"></script>
+<!--suppress JSUnresolvedFunction -->
+<script>
+    $(document).ready(function () {
+        $("#myModal").modal('show');
+    });
+</script>
+</body>
+</html>
