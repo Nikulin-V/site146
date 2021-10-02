@@ -9,6 +9,10 @@ flask-migrate
 flask-mobility
 flask-socketio
 flask-sqlalchemy
+flask-security
+flask-cors
 pymorphy2
 eventlet
 alembic
+sqlalchemy-serializer
+email-validator
