@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/data/__pycache__
+/forms/__pycache__
+/__pycache__
+/tools/__pycache__
+/site_app/__pycache__
+/site_app/api/__pycache__
