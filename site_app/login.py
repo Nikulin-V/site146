@@ -32,7 +32,7 @@ def login():
             return redirect(url(redirect_page or ".index"))
         return render_template("site/login.html",
                                title='Авторизация',
-                               message="Неправильный логин или пароль",
+                               message="Неверный логин или пароль",
                                form=form)
     return render_template("site/login.html",
                            title='Авторизация',

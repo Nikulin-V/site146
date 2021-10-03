@@ -1,11 +1,18 @@
 #  Nikulin Vasily © 2021
 import functools
 import os
+import random
+import string
 
 import flask
 from flask import request, jsonify, abort
 from flask_login import current_user, AnonymousUserMixin
 from flask_socketio import emit
+
+
+def generate_random_string(length):
+    letters = string.ascii_letters
+    return ''.join(random.choice(letters) for _ in range(length))
 
 
 def fillJson(json, args):
