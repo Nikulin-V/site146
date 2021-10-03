@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg9"
+   width="173"
+   height="173"
+   viewBox="0 0 173 155"
+   sodipodi:docname="Logo-highlighted.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs13" />
+  <sodipodi:namedview
+     id="namedview11"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="1.3693549"
+     inkscape:cx="-197.53828"
+     inkscape:cy="12.779741"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g15" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g15"
+     style="display:inline">
+    <circle
+       style="fill:none;fill-rule:evenodd;stroke:#0000ff;stroke-width:1.37596;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path32"
+       cx="86.5"
+       cy="77.499992"
+       r="85.812019" />
+    <path
+       id="ellipse95169"
+       style="fill:#ff9700;fill-opacity:1;stroke:none;stroke-width:0.912242;stroke-opacity:1"
+       d="M 148.73221,20.363306 C 101.93215,36.66667 93.670123,73.547758 92.491481,80.679192 a 33.872959,34.580271 0 0 0 -0.69873,6.583726 33.872959,34.580271 0 0 0 33.872359,34.579342 33.872959,34.580271 0 0 0 33.87415,-34.579342 33.872959,34.580271 0 0 0 -26.36727,-33.715844 c -5.22207,-1.807485 -5.34081,-1.807611 -5.34081,-1.807611 0,0 1.54961,-6.717696 3.87168,-11.974322 l 0.0358,0.01432 4.82842,-6.13406 -0.58229,0.195272 c 0.19279,-0.08794 0.38663,-0.160296 0.58229,-0.195272 z m -22.23757,53.58705 a 13.333854,13.480445 0 0 1 13.33145,13.479169 13.333854,13.480445 0 0 1 -13.33145,13.480955 13.333854,13.480445 0 0 1 -13.33503,-13.480955 13.333854,13.480445 0 0 1 13.33503,-13.479169 z"
+       inkscape:label="6"
+       inkscape:export-filename="C:\Users\victor2\source\repos\site146-2\static\images\Logo-sqr-big.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path26590"
+       style="display:inline;fill:#193972;fill-opacity:1;stroke:none;stroke-width:0.917276px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:label="4"
+       d="m 104.18537,17.181615 -92.612378,97.627255 89.597088,-1.00323 c 0,0 -27.965093,-25.453526 3.34674,-63.631942 z m -3.01529,96.624025 3.35035,-63.300514 -0.003,-0.281265 z M 82.748659,70.26526 82.915274,92.035449 61.14531,91.700446 Z"
+       inkscape:export-filename="C:\Users\victor2\source\repos\site146-2\static\images\Logo-sqr-big.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       id="path387"
+       style="fill:#2e74b0;fill-opacity:1;stroke:#2e74b0;stroke-width:0.917276px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 48.584266,18.854872 27.650985,39.453424 V 93.542093 L 49.25433,71.103677 Z m -20.598248,97.629038 0.166621,6.02839 21.101691,0.16837 -0.16662,-6.19676 z"
+       inkscape:label="1"
+       inkscape:export-filename="C:\Users\victor2\source\repos\site146-2\static\images\Logo-sqr-big.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>
