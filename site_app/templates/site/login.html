@@ -35,7 +35,7 @@
                     </div>
                 </td>
                 <td style="text-align: right">
-                    <a href="#" id="forgot-password" class="normal-link">
+                    <a href="#" onclick="resetPassword($('#email').val())" class="normal-link">
                         Забыли пароль?
                     </a>
                 </td>
@@ -47,7 +47,8 @@
 
     </div>
     {% if message %}
-        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade auth-modal" id="myModal" tabindex="-1"
+             aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

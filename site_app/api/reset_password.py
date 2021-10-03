@@ -1,6 +1,4 @@
 #  Nikulin Vasily © 2021
-import random
-
 from flask_mail import Message
 
 from app import mail
@@ -46,6 +44,9 @@ def reset_password(json=None):
                   sender='support@area-146.tk',
                   recipients=[email])
     mail.send(msg)
+
+    db_sess.merge(user)
+    db_sess.commit()
 
     return send_response(
         event_name,
