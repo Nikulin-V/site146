@@ -2,6 +2,10 @@
 
 {% block content %}
 <style>
+    .nav_item_style {
+        font-size: 20px;
+        font-family: Impact;
+    }
         {% if request.MOBILE %}
             main {
                 padding: 0 !important;
@@ -19,15 +23,15 @@
 {% else %}
     <h2 style="margin: 10px; color: white; text-align: center;">План школы</h2>
     <div style="background-color: white; padding: 5px 10px; margin: 0 15px 0 15px; font-size: .7em;">
-        {% endif %}
+{% endif %}
         <ul class="nav nav-tabs" id="FloorSelect" role="tablist">
-            <li class="nav-item" role="presentation">
+            <li class="nav-item nav_item_style" role="presentation">
                 <button class="nav-link active" id="floor1-tab" data-bs-toggle="tab" data-bs-target="#floor1" type="button" role="tab" aria-controls="floor1" aria-selected="true">Этаж 1</button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item nav_item_style" role="presentation">
                 <button class="nav-link" id="floor2-tab" data-bs-toggle="tab" data-bs-target="#floor2" type="button" role="tab" aria-controls="floor2" aria-selected="false">Этаж 2</button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item nav_item_style" role="presentation">
                 <button class="nav-link" id="floor3-tab" data-bs-toggle="tab" data-bs-target="#floor3" type="button" role="tab" aria-controls="floor3" aria-selected="false">Этаж 3</button>
             </li>
         </ul>
