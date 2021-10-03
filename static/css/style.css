@@ -82,7 +82,7 @@ main {
 }
 
 #logo-background {
-    background: url(../images/Logo.png) no-repeat;
+    background: url(../images/Logo-sqr.png) no-repeat;
     background-size: 250px auto;
     top: 57%;
     left: 40%;
