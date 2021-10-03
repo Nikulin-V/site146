@@ -2,19 +2,6 @@
 
 {% block content %}
 <style>
-        .plan-ol {
-            list-style: none;
-            counter-reset: li;
-        {% if request.MOBILE %}
-            padding-left: 10px;
-        {% endif %}
-        }
-
-        .plan-li:before {
-            counter-increment: li;
-            content: counters(li, ".") ". ";
-        }
-
         {% if request.MOBILE %}
             main {
                 padding: 0 !important;
@@ -32,6 +19,22 @@
 {% else %}
     <h2 style="margin: 10px; color: white; text-align: center;">План школы</h2>
     <div style="background-color: white; padding: 5px 10px; margin: 0 15px 0 15px; font-size: .7em;">
-{% endif %}
- </div>
+        {% endif %}
+        <ul class="nav nav-tabs" id="FloorSelect" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="floor1-tab" data-bs-toggle="tab" data-bs-target="#floor1" type="button" role="tab" aria-controls="floor1" aria-selected="true">Этаж 1</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="floor2-tab" data-bs-toggle="tab" data-bs-target="#floor2" type="button" role="tab" aria-controls="floor2" aria-selected="false">Этаж 2</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="floor3-tab" data-bs-toggle="tab" data-bs-target="#floor3" type="button" role="tab" aria-controls="floor3" aria-selected="false">Этаж 3</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="FloorSelectContent">
+            <div class="tab-pane fade show active" id="floor1" role="tabpanel" aria-labelledby="floor1-tab"><img src="/static/images/level_1_plan.png"></div>
+            <div class="tab-pane fade" id="floor2" role="tabpanel" aria-labelledby="floor2-tab"><img src="/static/images/level_2_plan.png"></div>
+            <div class="tab-pane fade" id="floor3" role="tabpanel" aria-labelledby="floor3-tab"><img src="/static/images/level_3_plan.png"></div>
+        </div>
+    </div>
 {% endblock %}
