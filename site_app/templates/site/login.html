@@ -24,16 +24,27 @@
                     </div>
                 {% endfor %}
             </div>
-            <div class="form-check form-switch"
-                    {% if request.MOBILE %}
-                 style="width: 100vw"
-                    {% endif %}>
-                {{ form.remember_me(class="form-check-input", id="remember-me") }}
-                {{ form.remember_me.label(class="form-check-label", for="remember-me") }}
-            </div>
+            <table class="layout-table" style="width: 100%">
+                <td>
+                    <div class="form-check form-switch"
+                            {% if request.MOBILE %}
+                         style="width: 100vw"
+                            {% endif %}>
+                        {{ form.remember_me(class="form-check-input", id="remember-me") }}
+                        {{ form.remember_me.label(class="form-check-label", for="remember-me") }}
+                    </div>
+                </td>
+                <td style="text-align: right">
+                    <a href="#" id="forgot-password" class="normal-link">
+                        Забыли пароль?
+                    </a>
+                </td>
+            </table>
+
             <br>
             <div>{{ form.submit(type="submit", class="btn btn-info") }}</div>
         </form>
+
     </div>
     {% if message %}
         <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -55,4 +66,7 @@
             </div>
         </div>
     {% endif %}
+
+    <script src="{{ url('.static', filename='js/login.js') }}"></script>
+
 {% endblock %}

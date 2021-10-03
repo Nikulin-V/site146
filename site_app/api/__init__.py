@@ -12,3 +12,4 @@ clients_sid = dict()
 
 from .sockets import registerUserSessionSID
 from .users import createUser, getUsers, editUser, deleteUser
+from .reset_password import reset_password

@@ -28,7 +28,14 @@ app.config.update(
     SESSION_COOKIE_DOMAIN=SERVER_NAME,
     SESSION_COOKIE_HTTPONLY=False,
     MAX_CONTENT_LENGTH=32 * 1024 * 1024,
-    PREFERRED_URL_SCHEME=SCHEME
+    PREFERRED_URL_SCHEME=SCHEME,
+    MAIL_SERVER='smtp.yandex.ru',
+    MAIL_PORT=465,
+    MAIL_USE_TLS=False,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME='support@area-146.tk',
+    MAIL_DEFAULT_SENDER='support@area-146.tk',
+    MAIL_PASSWORD='Ybrekby0108'
 )
 app.config.from_pyfile('config-extended.py')
 
