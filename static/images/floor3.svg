@@ -21,17 +21,42 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="1"
      showgrid="false"
-     inkscape:zoom="0.339375"
-     inkscape:cx="1772.3757"
-     inkscape:cy="850.09208"
+     inkscape:zoom="0.9983453"
+     inkscape:cx="790.80855"
+     inkscape:cy="310.01298"
      inkscape:window-width="1920"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g7427-2" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <rect
+       x="693.14695"
+       y="48.079557"
+       width="309.51216"
+       height="190.31492"
+       id="rect24401" />
+    <rect
+       x="1009.6707"
+       y="-380.62983"
+       width="282.4674"
+       height="64.106076"
+       id="rect21451" />
+    <rect
+       x="784.29778"
+       y="-419.69447"
+       width="152.25193"
+       height="86.14254"
+       id="rect3001" />
+    <rect
+       x="693.14697"
+       y="48.079556"
+       width="309.51215"
+       height="190.31493"
+       id="rect24401-0" />
+  </defs>
   <g
      id="layer1"
      style="display:inline;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"
@@ -270,6 +295,195 @@
          style="fill:none;stroke:#000000;stroke-width:0.329214;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 58.132265,146.21875 c 0,8.8508 -0.0301,8.8508 -0.0301,8.8508"
          id="path2193-9" />
+    </g>
+    <g
+       id="g7427"
+       transform="translate(-226.53953,197.62016)">
+      <rect
+         style="fill:#1716ff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         id="rect1721"
+         width="71.681168"
+         height="39.189079"
+         x="323.55527"
+         y="-145.89079" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:32.2535px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         x="330.7851"
+         y="-114.27248"
+         id="text4903"
+         transform="scale(1.0047199,0.99530228)"><tspan
+           sodipodi:role="line"
+           id="tspan4901"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.2535px;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';fill:#ffffff;fill-opacity:1;stroke-width:0.502872"
+           x="330.7851"
+           y="-114.27248">308</tspan></text>
+    </g>
+    <g
+       id="g7427-3"
+       style="display:inline;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"
+       transform="translate(251.22219,389.04374)">
+      <rect
+         style="fill:#1716ff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         id="rect1721-7"
+         width="71.681168"
+         height="39.189079"
+         x="323.55527"
+         y="-145.89079" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:32.2535px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         x="330.7851"
+         y="-114.27248"
+         id="text4903-6"
+         transform="scale(1.0047199,0.99530228)"><tspan
+           sodipodi:role="line"
+           id="tspan4901-3"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.2535px;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';fill:#ffffff;fill-opacity:1;stroke-width:0.502872"
+           x="330.7851"
+           y="-114.27248">303</tspan></text>
+    </g>
+    <g
+       id="g7427-6"
+       style="display:inline;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"
+       transform="translate(314.11227,200.13227)">
+      <rect
+         style="fill:#1716ff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         id="rect1721-0"
+         width="71.681168"
+         height="39.189079"
+         x="323.55527"
+         y="-145.89079" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:32.2535px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         x="330.7851"
+         y="-114.27248"
+         id="text4903-0"
+         transform="scale(1.0047199,0.99530228)"><tspan
+           sodipodi:role="line"
+           id="tspan4901-0"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.2535px;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';fill:#ffffff;fill-opacity:1;stroke-width:0.502872"
+           x="330.7851"
+           y="-114.27248">301</tspan></text>
+    </g>
+    <g
+       id="g7427-2"
+       style="display:inline;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"
+       transform="translate(285.02853,303.75169)">
+      <rect
+         style="fill:#1716ff;fill-opacity:1;stroke:none;stroke-width:0.567507"
+         id="rect1721-8"
+         width="91.292053"
+         height="39.189079"
+         x="323.55527"
+         y="-145.89079" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:32.2535px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         x="330.7851"
+         y="-114.27248"
+         id="text4903-01"
+         transform="scale(1.0047199,0.99530228)"><tspan
+           sodipodi:role="line"
+           id="tspan4901-03"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.2535px;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';fill:#ffffff;fill-opacity:1;stroke-width:0.502872"
+           x="330.7851"
+           y="-114.27248">WC🚺</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.33755921,0,0,0.33439517,-241.77367,-310.97343)"
+         id="text24399"
+         style="font-style:normal;font-weight:normal;font-size:64px;line-height:1.25;font-family:sans-serif;white-space:pre;fill:#000000;fill-opacity:1;stroke:none;shape-inside:url(#rect24401)"><tspan
+           x="693.14648"
+           y="104.70508"
+           id="tspan36007">↓ на 2 и </tspan><tspan
+           x="693.14648"
+           y="184.70508"
+           id="tspan36009">1 этажи</tspan></text>
+      <text
+         xml:space="preserve"
+         transform="matrix(0.33755921,0,0,0.33439517,-90.17525,-310.03801)"
+         id="text24399-0"
+         style="font-style:normal;font-weight:normal;font-size:64px;line-height:1.25;font-family:sans-serif;white-space:pre;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none;shape-inside:url(#rect24401-0)"><tspan
+           x="693.14648"
+           y="104.70508"
+           id="tspan36011">↓ на 2 и </tspan><tspan
+           x="693.14648"
+           y="184.70508"
+           id="tspan36013">1 этажи</tspan></text>
+    </g>
+    <g
+       id="g7427-5"
+       style="display:inline;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"
+       transform="translate(-209.97172,390.71849)">
+      <rect
+         style="fill:#1716ff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         id="rect1721-1"
+         width="71.681168"
+         height="39.189079"
+         x="323.55527"
+         y="-145.89079" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:32.2535px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         x="330.7851"
+         y="-114.27248"
+         id="text4903-5"
+         transform="scale(1.0047199,0.99530228)"><tspan
+           sodipodi:role="line"
+           id="tspan4901-2"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.2535px;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';fill:#ffffff;fill-opacity:1;stroke-width:0.502872"
+           x="330.7851"
+           y="-114.27248">306</tspan></text>
+    </g>
+    <g
+       id="g7427-39"
+       style="display:inline;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"
+       transform="translate(-54.098998,390.71849)">
+      <rect
+         style="fill:#1716ff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         id="rect1721-6"
+         width="71.681168"
+         height="39.189079"
+         x="323.55527"
+         y="-145.89079" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:32.2535px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         x="330.7851"
+         y="-114.27248"
+         id="text4903-77"
+         transform="scale(1.0047199,0.99530228)"><tspan
+           sodipodi:role="line"
+           id="tspan4901-4"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.2535px;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';fill:#ffffff;fill-opacity:1;stroke-width:0.502872"
+           x="330.7851"
+           y="-114.27248">305</tspan></text>
+    </g>
+    <g
+       id="g7427-9"
+       style="display:inline;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"
+       transform="translate(102.11184,389.37869)">
+      <rect
+         style="fill:#1716ff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         id="rect1721-15"
+         width="71.681168"
+         height="39.189079"
+         x="323.55527"
+         y="-145.89079" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:32.2535px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.502872"
+         x="330.7851"
+         y="-114.27248"
+         id="text4903-54"
+         transform="scale(1.0047199,0.99530228)"><tspan
+           sodipodi:role="line"
+           id="tspan4901-49"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32.2535px;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';fill:#ffffff;fill-opacity:1;stroke-width:0.502872"
+           x="330.7851"
+           y="-114.27248">304</tspan></text>
     </g>
   </g>
 </svg>
