@@ -41,7 +41,7 @@ def reset_password(json=None):
     msg = Message(subject='Сброс пароля на сайте школы №146',
                   body=f'Новый пароль: {new_password}\n'
                        f'Не забудьте поменять его после авторизации',
-                  sender='support@area-146.tk',
+                  sender=('Школа №146', 'no-reply@area-146.tk'),
                   recipients=[email])
     mail.send(msg)
 

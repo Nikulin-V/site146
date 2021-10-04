@@ -2,7 +2,7 @@
 import os
 
 import eventlet
-from flask import Flask, redirect, Blueprint
+from flask import Flask, Blueprint
 from flask_admin import Admin
 from flask_login import LoginManager
 from flask_mail import Mail
@@ -33,9 +33,9 @@ app.config.update(
     MAIL_PORT=465,
     MAIL_USE_TLS=False,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME='support@area-146.tk',
-    MAIL_DEFAULT_SENDER='support@area-146.tk',
-    MAIL_PASSWORD='Ybrekby0108'
+    MAIL_USERNAME='no-reply@area-146.tk',
+    MAIL_DEFAULT_SENDER='no-reply@area-146.tk',
+    MAIL_PASSWORD='school146noreply'
 )
 app.config.from_pyfile('config-extended.py')
 
@@ -55,9 +55,6 @@ db_session.global_init('db/database.sqlite')
 
 
 def main():
-    # noinspection PyUnresolvedReferences
-    db_sess = db_session.create_session()
-    db.create_all()
     port = int(os.environ.get('PORT', 443))
     socket_.run(app, host='0.0.0.0', port=port, keyfile='private.key', certfile='certificate.crt')
 
@@ -75,11 +72,6 @@ def add_admin_panel():
 def load_user(user_id):
     db_sess = db_session.create_session()
     return db_sess.query(User).get(user_id)
-
-
-@app.route('/secrets-of-literacy')
-def secrets_of_literacy():
-    return redirect('https://secrets-of-literacy.wixsite.com/website')
 
 
 if __name__ == '__main__':

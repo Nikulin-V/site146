@@ -7,14 +7,16 @@ function resetPassword(email) {
             <input id="email-reset" class="form-control" type="email" value="${email}" placeholder="Email">
             <label for="title-input">Email</label>
         </div>`
-    let button = `<button onclick="sendEmail()" class="btn btn-info">Отправить код</button>`
+    let button = `<button id="send-code" onclick="sendEmail()" class="btn btn-info">Отправить код</button>`
     showModal(message, 'Сброс пароля', [button])
 }
 
 function sendEmail() {
     $('.reset-error').remove();
     $('#email-reset').removeClass('is-invalid')
+    $('#send-code').addClass('disabled')
     $('.modal-footer').prepend(`<div class="spinner-border text-info" role="status"></div>`)
+
     sendCode()
 }
 

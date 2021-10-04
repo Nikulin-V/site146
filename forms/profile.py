@@ -10,8 +10,6 @@ class ProfileForm(FlaskForm):
     name = StringField('Имя', validators=[DataRequired()])
     patronymic = StringField('Отчество')
     email = EmailField('Почта', validators=[DataRequired()])
-    role = SelectField('Роль', validators=[DataRequired()],
-                       choices=['Ученик', 'Учитель', 'Родитель'])
     old_password = PasswordField('Старый пароль')
     password = PasswordField('Пароль')
     password_again = PasswordField('Повторите пароль')
