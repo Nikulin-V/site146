@@ -11,8 +11,8 @@ class News(SqlAlchemyBase):
     __tablename__ = 'news'
 
     id = sqlalchemy.Column(sqlalchemy.String, primary_key=True, default=lambda: str(uuid4()))
-    sector_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey('sectors.id'))
-    sector = relationship("Sector")
+    theme_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey('themes.id'))
+    theme = relationship("Theme", primaryjoin="Theme.id == News.theme_id")
     author_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("users.id"))
     title = sqlalchemy.Column(sqlalchemy.String)
     message = sqlalchemy.Column(sqlalchemy.Text)
@@ -20,3 +20,27 @@ class News(SqlAlchemyBase):
     picture = sqlalchemy.Column(sqlalchemy.String)
     files_links = sqlalchemy.Column(sqlalchemy.String)
     liked_ids = sqlalchemy.Column(sqlalchemy.String)
+
+
+class Sector(SqlAlchemyBase):
+    __tablename__ = 'sectors'
+
+    id = sqlalchemy.Column(sqlalchemy.String, primary_key=True, default=lambda: str(uuid4()))
+    title = sqlalchemy.Column(sqlalchemy.String, unique=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Theme(SqlAlchemyBase):
+    __tablename__ = 'themes'
+
+    id = sqlalchemy.Column(sqlalchemy.String, primary_key=True, default=lambda: str(uuid4()))
+    title = sqlalchemy.Column(sqlalchemy.String, unique=True)
+    editors_role_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("roles.id"))
+    editors_role = relationship("Role", primaryjoin="Theme.editors_role_id == Role.id")
+    viewers_role_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("roles.id"))
+    viewers_role = relationship("Role", primaryjoin="Theme.viewers_role_id == Role.id")
+
+    def __str__(self):
+        return self.title

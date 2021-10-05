@@ -6,10 +6,9 @@ from flask_login import current_user
 from data import db_session
 from data.classes import Class, Group, ClassLesson, GroupLesson
 from data.homeworks import Homework
-from data.news import News
+from data.news import News, Sector, Theme
 from data.roles import Role, RolesUsers
 from data.scheduled_job import ScheduledJob
-from data.themes import Sector, Theme
 from data.users import User
 
 
