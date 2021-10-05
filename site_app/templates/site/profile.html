@@ -10,37 +10,11 @@
     <hr>
     <form action="" method="post" id="profile-form">
         {{ form.hidden_tag() }}
+        <h5>Общая информация</h5>
         <div>
             {{ form.email.label }}<br>
             {{ form.email(class="form-control", type="email", value=current_user.email) }}
             {% for error in form.email.errors %}
-                <p class="alert alert-danger" role="alert">
-                    {{ error }}
-                </p>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.old_password.label }}<br>
-            {{ form.old_password(class="form-control", type="password") }}
-            {% for error in form.old_password.errors %}
-                <p class="alert alert-danger" role="alert">
-                    {{ error }}
-                </p>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.password.label }}<br>
-            {{ form.password(class="form-control", type="password") }}
-            {% for error in form.password.errors %}
-                <p class="alert alert-danger" role="alert">
-                    {{ error }}
-                </p>
-            {% endfor %}
-        </div>
-        <div>
-            {{ form.password_again.label }}<br>
-            {{ form.password_again(class="form-control", type="password") }}
-            {% for error in form.password_again.errors %}
                 <p class="alert alert-danger" role="alert">
                     {{ error }}
                 </p>
@@ -73,7 +47,39 @@
                 </p>
             {% endfor %}
         </div>
-        <div>{{ form.submit(type="submit", class="btn btn-info", value=btn_label) }}</div>
+        <div>{{ form.submit(type="submit", class="btn btn-info", value='Сохранить') }}</div>
+        <hr>
+        <h5>Смена пароля</h5>
+        <div class="outline-danger">
+            <div>
+                {{ form.old_password.label }}<br>
+                {{ form.old_password(class="form-control", type="password") }}
+                {% for error in form.old_password.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.password.label }}<br>
+                {{ form.password(class="form-control", type="password") }}
+                {% for error in form.password.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+            <div>
+                {{ form.password_again.label }}<br>
+                {{ form.password_again(class="form-control", type="password") }}
+                {% for error in form.password_again.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
+        <div>{{ form.submit(type="submit", class="btn btn-danger", value='Изменить пароль') }}</div>
     </form>
     {% if message %}
         <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
