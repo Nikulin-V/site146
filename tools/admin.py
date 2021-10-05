@@ -9,6 +9,7 @@ from data.homeworks import Homework
 from data.news import News
 from data.roles import Role, RolesUsers
 from data.scheduled_job import ScheduledJob
+from data.themes import Sector, Theme
 from data.users import User
 
 
@@ -44,7 +45,7 @@ def connect_models(admin):
     db_sess = db_session.create_session()
 
     admin_models = [(User, UserView), RolesUsers, Role, ScheduledJob]
-    content_models = [(News, NewsView)]
+    content_models = [Sector, Theme, (News, NewsView)]
     edu_models = [Class, Group, ClassLesson, GroupLesson, Homework]
 
     categories = {
