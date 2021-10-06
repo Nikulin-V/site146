@@ -9,6 +9,9 @@ from flask import request, jsonify, abort
 from flask_login import current_user, AnonymousUserMixin
 from flask_socketio import emit
 
+from data import db_session
+from data.news import Sector, Theme
+
 
 def generate_random_string(length):
     letters = string.ascii_letters
@@ -66,3 +69,21 @@ def roles_allowed(*roles):
         return decorated_view
 
     return decorator
+
+
+def get_header_structure():
+    db_sess = db_session.create_session()
+    structure = {}
+    sectors = db_sess.query(Sector).all()
+    for sector in sectors:
+        themes = db_sess.query(Theme).filter(Theme.sector_id == sector.id).all()
+        themes = list(filter(has_permission, themes))
+        if themes:
+            structure[sector.title] = [(theme.title, theme.address) for theme in themes]
+    return structure
+
+
+def has_permission(theme: Theme):
+    if not theme.viewers_role:
+        return True
+    return current_user.has_role(theme.viewers_role.name)

@@ -14,3 +14,4 @@ from .privacy_policy import privacy_policy
 from .profile import profile
 from .register import register
 from .verification import yandex_verification
+from .feed import feed

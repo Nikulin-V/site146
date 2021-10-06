@@ -26,7 +26,8 @@ class Sector(SqlAlchemyBase):
     __tablename__ = 'sectors'
 
     id = sqlalchemy.Column(sqlalchemy.String, primary_key=True, default=lambda: str(uuid4()))
-    title = sqlalchemy.Column(sqlalchemy.String, unique=True)
+    title = sqlalchemy.Column(sqlalchemy.String, unique=True, default=lambda: str(uuid4()),
+                              nullable=False)
 
     def __str__(self):
         return self.title
@@ -36,7 +37,11 @@ class Theme(SqlAlchemyBase):
     __tablename__ = 'themes'
 
     id = sqlalchemy.Column(sqlalchemy.String, primary_key=True, default=lambda: str(uuid4()))
-    title = sqlalchemy.Column(sqlalchemy.String, unique=True)
+    title = sqlalchemy.Column(sqlalchemy.String, default=lambda: str(uuid4()), nullable=False)
+    address = sqlalchemy.Column(sqlalchemy.String, unique=True, default=lambda: str(uuid4()),
+                                nullable=False)
+    sector_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("sectors.id"))
+    sector = relationship("Sector")
     editors_role_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("roles.id"))
     editors_role = relationship("Role", primaryjoin="Theme.editors_role_id == Role.id")
     viewers_role_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("roles.id"))
