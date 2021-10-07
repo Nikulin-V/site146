@@ -19,11 +19,26 @@
                         Главная
                     </a>
                 </li>
-                <li>
-                    <a class="menu__item" href="{{ url('site.privacy_policy') }}">
-                        Политика конфиденциальности
-                    </a>
-                </li>
+                {% for sector, theme_data in header_structure().items() %}
+                    <li class="nav-item dropdown">
+                        <a class="menu__item dropdown-toggle" href="#" id="navbarDropdown"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ sector }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+                            style="width: 100vw">
+                            {% for theme, address in theme_data %}
+                                <li class="dropdown-item">
+                                    <a class="menu__item"
+                                       href="{{ url('site.feed', theme_address=address) }}"
+                                       style="white-space: normal">
+                                        {{ theme }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
             {% endblock header_content %}
         </ul>
     </div>

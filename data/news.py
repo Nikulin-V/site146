@@ -11,14 +11,12 @@ class News(SqlAlchemyBase):
     __tablename__ = 'news'
 
     id = sqlalchemy.Column(sqlalchemy.String, primary_key=True, default=lambda: str(uuid4()))
-    theme_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey('themes.id'))
-    theme = relationship("Theme", primaryjoin="Theme.id == News.theme_id")
-    author_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("users.id"))
+    theme_title = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey('themes.title'))
+    theme = relationship("Theme", primaryjoin="Theme.title == News.theme_title")
     title = sqlalchemy.Column(sqlalchemy.String)
     message = sqlalchemy.Column(sqlalchemy.Text)
     date = sqlalchemy.Column(sqlalchemy.DateTime)
     picture = sqlalchemy.Column(sqlalchemy.String)
-    files_links = sqlalchemy.Column(sqlalchemy.String)
     liked_ids = sqlalchemy.Column(sqlalchemy.String)
 
 

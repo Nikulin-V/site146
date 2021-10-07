@@ -1,0 +1,50 @@
+{% extends "site/base.html" %}
+
+{% block content %}
+
+    <div id="news-header">
+        <table class="layout-table" style="width: 100%">
+            <tr style="font-size: 1.5em">
+                <td style="text-align: left">
+                    {% if not request.MOBILE %}
+                        <h1>{{ title }}</h1>
+                    {% else %}
+                        <h3>{{ title }}</h3>
+                    {% endif %}
+                </td>
+                {% if not request.MOBILE %}
+                    <td style="text-align: -webkit-center">
+                        <button id="news-update-btn" class="btn btn-info" onclick="showNewPosts()">
+                            Свежие записи <span class="material-icons"
+                                                style="vertical-align: bottom">update</span>
+                        </button>
+                    </td>
+                {% endif %}
+                <td style="text-align: right">
+                    <button id="create-news" class="btn btn-info" onclick="createNews()">Создать
+                        пост
+                    </button>
+                </td>
+            </tr>
+        </table>
+        {% if request.MOBILE %}
+            <button id="news-update-btn" class="btn btn-info" onclick="showNewPosts()"
+                    style="width: 100%; margin-top: 3px">
+                Свежие записи
+                <span class="material-icons" style="vertical-align: bottom">update</span>
+            </button>
+        {% endif %}
+        <hr style="margin: 5px 0">
+    </div>
+
+
+    <div class="text-center news">
+        <div class="spinner-border text-info" role="status">
+            <span class="visually-hidden">Загрузка...</span>
+        </div>
+    </div>
+
+    <script src="{{ url('.static', filename='js/api/feed.js') }}"></script>
+    <script src="{{ url('.static', filename='js/feed.js') }}"></script>
+
+{% endblock %}
