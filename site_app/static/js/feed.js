@@ -2,6 +2,21 @@
  * Nikulin Vasily © 2021
  */
 
+users.hasEditPermission(theme(), showCreatePostButton)
+
+function showCreatePostButton() {
+    if (users.editor === true) {
+        createPostButton = `<td style="text-align: right">
+                                <button id="create-news" class="btn btn-info" onclick="createNews()">
+                                    Создать пост
+                                </button>
+                            </td>`
+        $("#news-header > table > tbody > tr").append(createPostButton)
+    }
+}
+
+users.isAuthorized()
+
 updatePage()
 html = document.getElementsByTagName('html')[0]
 window.addEventListener('scroll', function () {
@@ -27,7 +42,6 @@ function addNews(page = 0, isFullUpdate = true) {
                 main = document.getElementsByTagName('main')[0]
                 while (document.getElementsByClassName('news').length > 0)
                     main.removeChild(document.getElementsByClassName('news')[0])
-                document.getElementById('username').scrollIntoView()
             }
             if (data['news'].length > 0) {
                 const newsList = data['news']
@@ -37,14 +51,20 @@ function addNews(page = 0, isFullUpdate = true) {
                         picture = `<img id="${n.id}-picture" src="${n.picture}" alt="Неверная ссылка на изображение новости" class="card-img-top">`
                     else
                         picture = ''
-                    if (data['editPermission'])
+                    if (data['editPermission'] && users.authorized) {
                         authorButtons = `
                                 <div style="display: inline-flex">
                                     <button onclick="deleteNews('${n.id}')" class="btn btn-outline-danger btn-delete btn-icon"><span class="material-icons md-red">clear</span></button>
                                     <button onclick="editNews('${n.id}')" class="btn btn-outline-warning btn-edit btn-icon"><span class="material-icons-round md-yellow">edit</span></button>
                                 </div>`
-                    else authorButtons = ''
+                    } else authorButtons = ''
                     likes = parseInt(n.likes) > 0 ? " " + n.likes.toString() : ""
+                    likeButton = `<td style="text-align: right; border: 0; width: 1px">
+                                    <button id="${n.id}-like" onclick="like('${n.id}')" class="btn btn-outline-danger btn-like btn-icon">
+                                        <span id="${n.id}-like-symbol" class="material-icons-round md-red">favorite${n.isLiked ? "" : "_border"}</span>
+                                        <span id="${n.id}-like-counter" class="btn-icon-text">${likes}</span>
+                                    </button>
+                                </td>`
                     newsFooter = `
                         <table style="width: 100%; border: 0; margin: 5px 0">
                             <tr style="border: 0">
@@ -56,12 +76,7 @@ function addNews(page = 0, isFullUpdate = true) {
                                         <small class="text-muted">${n.date}</small>
                                     </p>
                                 </td>
-                                <td style="text-align: right; border: 0; width: 1px">
-                                    <button id="${n.id}-like" onclick="like('${n.id}')" class="btn btn-outline-danger btn-like btn-icon">
-                                        <span id="${n.id}-like-symbol" class="material-icons-round md-red">favorite${n.isLiked ? "" : "_border"}</span>
-                                        <span id="${n.id}-like-counter" class="btn-icon-text">${likes}</span>
-                                    </button>
-                                </td>
+                                    ${users.authorized === true ? likeButton : ''}
                             </tr>
                         </table>
                     `

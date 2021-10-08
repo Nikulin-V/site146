@@ -1,7 +1,7 @@
 #  Nikulin Vasily © 2021
 import datetime
 
-from flask_login import current_user, login_required
+from flask_login import current_user, login_required, AnonymousUserMixin
 
 from config import NEWS_PER_PAGE, icons
 from data import db_session
@@ -13,7 +13,6 @@ from . import socket, api
 
 @socket.on('getNews')
 @api.route('/api/news', methods=['GET'])
-@login_required
 def getNews(json=None):
     if json is None:
         json = dict()
@@ -52,7 +51,10 @@ def getNews(json=None):
     ).all()
     end = True if len(news) <= (page + 1) * NEWS_PER_PAGE else False
     for n in news:
-        n.is_liked = str(current_user.id) in str(n.liked_ids).split(";")
+        if isinstance(current_user, AnonymousUserMixin):
+            n.is_liked = False
+        else:
+            n.is_liked = str(current_user.id) in str(n.liked_ids).split(";")
     news = news[page * NEWS_PER_PAGE:(page + 1) * NEWS_PER_PAGE]
     n: News
 
@@ -136,7 +138,6 @@ def createNews(json=None):
 
 @socket.on('editNews')
 @api.route('/api/news', methods=['PUT'])
-@login_required
 def editNews(json=None):
     if json is None:
         json = dict()
@@ -166,8 +167,8 @@ def editNews(json=None):
             }
         )
 
-    if news.theme == json['theme'] and not has_edit_permission(json['theme']) and not json[
-        'isLike']:
+    if news.theme == json['theme'] and not has_edit_permission(json['theme']) and \
+            not json['isLike']:
         return send_response(
             event_name,
             {

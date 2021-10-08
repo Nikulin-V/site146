@@ -80,3 +80,29 @@ socket.on('deleteUser', function (data) {
     if (users.deleteFn)
         users.deleteFn(data)
 })
+
+users.hasEditPermission = function (theme = null,
+                                    fn = null) {
+    if (fn)
+        users.hasEditPermissionFn = fn
+    else
+        users.hasEditPermissionFn = null
+    socket.emit('hasEditPermission', {
+        'theme': theme
+    })
+}
+
+socket.on('hasEditPermission', function (data) {
+    users.editor = data['hasEditPermission']
+    if (users.hasEditPermissionFn)
+        users.hasEditPermissionFn(data)
+})
+
+users.isAuthorized = function () {
+    socket.emit('isAuthorized')
+}
+
+socket.on('isAuthorized', function (data) {
+    users.authorized = data['isAuthorized']
+    console.log(users.authorized)
+})

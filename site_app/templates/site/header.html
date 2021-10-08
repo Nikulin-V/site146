@@ -20,7 +20,7 @@
                             {{ sector }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for theme, address in theme_data %}
+                            {% for theme, address, is_feed in theme_data %}
                                 <li>
                                     <a class="dropdown-item"
                                        href="{{ url('site.feed', theme_address=address) }}">
