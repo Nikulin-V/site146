@@ -15,3 +15,4 @@ from .school_plan import school_plan
 from .profile import profile
 from .register import register
 from .verification import yandex_verification
+from .feed import feed

@@ -2,7 +2,7 @@
 HOST = 's146.ru'
 DEV_HOST = 's146.tk'
 SERVER_NAME = DEV_HOST
-SCHEME = 'https'
+SCHEME = 'http'
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp', 'ico', 'webp'}
 

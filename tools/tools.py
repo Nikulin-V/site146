@@ -3,11 +3,15 @@ import functools
 import os
 import random
 import string
+from typing import Union
 
 import flask
 from flask import request, jsonify, abort
 from flask_login import current_user, AnonymousUserMixin
 from flask_socketio import emit
+
+from data import db_session
+from data.news import Sector, Theme
 
 
 def generate_random_string(length):
@@ -66,3 +70,42 @@ def roles_allowed(*roles):
         return decorated_view
 
     return decorator
+
+
+def get_header_structure():
+    db_sess = db_session.create_session()
+    structure = {}
+    sectors = db_sess.query(Sector).all()
+    for sector in sectors:
+        themes = db_sess.query(Theme).filter(Theme.sector_id == sector.id).all()
+        themes = list(filter(has_view_permission, themes))
+        if themes:
+            structure[sector.title] = [(theme.title, theme.address, theme.is_feed)
+                                       for theme in themes]
+    return structure
+
+
+def has_view_permission(theme: Union[Theme, str]):
+    if isinstance(theme, str):
+        db_sess = db_session.create_session()
+        theme = db_sess.query(Theme).filter(Theme.title == theme).first()
+
+    if not theme.viewers_role:
+        return True
+    if isinstance(current_user, AnonymousUserMixin):
+        return False
+
+    return current_user.has_role(theme.viewers_role.name)
+
+
+def has_edit_permission(theme: Union[Theme, str]):
+    if isinstance(theme, str):
+        db_sess = db_session.create_session()
+        theme = db_sess.query(Theme).filter(Theme.title == theme).first()
+
+    if not theme.editors_role:
+        return True
+    if isinstance(current_user, AnonymousUserMixin):
+        return False
+
+    return current_user.has_role(theme.editors_role.name)

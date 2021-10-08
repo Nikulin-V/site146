@@ -13,10 +13,24 @@
                 <li class="nav-item">
                     <a href="{{ url('site.index') }}" class="nav-link">Главная</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ url('site.privacy_policy') }}" class="nav-link">Политика
-                        конфиденциальности</a>
-                </li>
+                {% for sector, theme_data in header_structure().items() %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ sector }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for theme, address, is_feed in theme_data %}
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="{{ url('site.feed', theme_address=address) }}">
+                                        {{ theme }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     {% endblock header_content %}

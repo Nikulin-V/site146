@@ -1,10 +1,10 @@
 #  Nikulin Vasily © 2021
-from flask_login import login_required, current_user
+from flask_login import login_required, current_user, AnonymousUserMixin
 
-from site_app.api import api, socket
 from data import db_session
 from data.users import User
-from tools.tools import fillJson, send_response
+from site_app.api import api, socket
+from tools.tools import fillJson, send_response, has_edit_permission
 
 
 @socket.on('getUsers')
@@ -234,5 +234,33 @@ def deleteUser(json=None):
         {
             'message': 'Success',
             'errors': []
+        }
+    )
+
+
+@socket.on('hasEditPermission')
+def hasEditPermission(json=None):
+    if json is None:
+        json = dict()
+
+    event_name = 'hasEditPermission'
+    fillJson(json, ['theme', 'email'])
+
+    return send_response(
+        event_name,
+        {
+            'message': 'Success',
+            'hasEditPermission': has_edit_permission(json['theme'])
+        }
+    )
+
+
+@socket.on('isAuthorized')
+def isAuthorized():
+    return send_response(
+        'isAuthorized',
+        {
+            'message': 'Success',
+            'isAuthorized': not isinstance(current_user, AnonymousUserMixin)
         }
     )

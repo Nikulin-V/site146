@@ -15,6 +15,7 @@ import site_app
 from config import SERVER_NAME, SCHEME
 from data import db_session
 from tools.scheduler import Scheduler
+from tools.tools import get_header_structure
 from tools.url import url
 
 eventlet.monkey_patch()
@@ -51,12 +52,13 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 app.jinja_env.globals.update(url=url)
+app.jinja_env.globals.update(header_structure=get_header_structure)
 db_session.global_init('db/database.sqlite')
 
 
 def main():
-    port = int(os.environ.get('PORT', 443))
-    socket_.run(app, host='0.0.0.0', port=port, keyfile='private.key', certfile='certificate.crt')
+    port = int(os.environ.get('PORT', 80))
+    socket_.run(app, host='0.0.0.0', port=port)
 
 
 def add_admin_panel():
