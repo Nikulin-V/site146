@@ -104,5 +104,4 @@ users.isAuthorized = function () {
 
 socket.on('isAuthorized', function (data) {
     users.authorized = data['isAuthorized']
-    console.log(users.authorized)
 })

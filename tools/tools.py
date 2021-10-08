@@ -80,7 +80,7 @@ def get_header_structure():
         themes = db_sess.query(Theme).filter(Theme.sector_id == sector.id).all()
         themes = list(filter(has_view_permission, themes))
         if themes:
-            structure[sector.title] = [(theme.title, theme.address, theme.is_feed)
+            structure[sector.title] = [(theme.title, theme.address)
                                        for theme in themes]
     return structure
 
