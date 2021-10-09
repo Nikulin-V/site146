@@ -14,7 +14,6 @@ from flask_sqlalchemy import SQLAlchemy
 import site_app
 from config import SERVER_NAME, SCHEME
 from data import db_session
-from tools.scheduler import Scheduler
 from tools.tools import get_header_structure
 from tools.url import url
 
@@ -44,7 +43,6 @@ socket_ = SocketIO(app, cors_allowed_origins="*")
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-scheduler = Scheduler()
 mail = Mail(app)
 
 Mobility(app)

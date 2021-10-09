@@ -2,26 +2,12 @@
 
 {% block content %}
     <style>
-        .scheme rect.active {
-            fill: #FF8C0B !important;
-        }
-
-        .nav_item_style {
-            font-size: 20px;
-            font-family: Impact;
-        }
-
-        {% if request.MOBILE %}
-            main {
-                padding: 0 !important;
-            }
-        {% endif %}
-
         body {
             background-image: url({{ url('static', filename='images/index-background.jpg') }});
             background-attachment: fixed;
         }
     </style>
+
     {% if not request.MOBILE %}
         <h1 style="margin: 70px; color: white; text-align: center;">Информация о школе</h1>
         <div style="background-color: white; padding: 20px 40px;">
@@ -30,7 +16,8 @@
         <div style="background-color: white; padding: 5px 10px; margin: 0 15px 0 15px; font-size: .7em;">
     {% endif %}
 <div>
-    <a class="btn btn-info" href="https://s146.ru">
+    <a class="btn btn-info"
+       href="https://s146.ru" {{ 'style=margin-bottom:5px' if request.MOBILE else '' }}>
         <span class="material-icons-outlined align-bottom">wysiwyg</span>
         s146.ru
     </a>
