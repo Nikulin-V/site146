@@ -30,4 +30,34 @@
             ВУЗы России и зарубежья.
         </p>
     </div>
+    <div id="carouselExampleIndicators" class="carousel slide rounded" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                    class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+        </div>
+        <br>
+        <div class="carousel-inner rounded">
+            {% for i in range(3) %}
+                <div class="carousel-item {{ 'active' if i == 0 else '' }}">
+                    <img src="{{ url('static', filename='images/school' + loop.index|string() + '.jpg') }}"
+                         class="d-block w-100 img-fluid rounded"
+                         alt="Изображение школы {{ loop.index }}">
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </div>
 {% endblock %}
