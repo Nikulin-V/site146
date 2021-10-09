@@ -6,7 +6,6 @@ from flask_login import current_user
 from data import db_session
 from data.news import News, Sector, Theme
 from data.roles import Role, RolesUsers
-from data.scheduled_job import ScheduledJob
 from data.teachers import Teacher
 from data.users import User
 
@@ -46,7 +45,7 @@ class TeacherView(BaseModelView):
 def connect_models(admin):
     db_sess = db_session.create_session()
 
-    admin_models = [(User, UserView), RolesUsers, Role, ScheduledJob]
+    admin_models = [(User, UserView), RolesUsers, Role]
     content_models = [Sector, Theme, (News, NewsView)]
     edu_models = [(Teacher, TeacherView)]
 

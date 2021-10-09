@@ -1,6 +1,5 @@
 #  Nikulin Vasily © 2021
 import functools
-import os
 import random
 import string
 from typing import Union
@@ -34,13 +33,6 @@ def send_response(event_name, response=None, *args, **kwargs):
             emit(event_name, response, *args, **kwargs)
     else:
         return jsonify(response)
-
-
-def safe_remove(file):
-    if os.path.exists(file):
-        os.remove(file)
-        return True
-    return False
 
 
 def roles_required(*roles):
