@@ -25,20 +25,22 @@
                 {% endfor %}
             </div>
             <table class="layout-table" style="width: 100%">
-                <td>
-                    <div class="form-check form-switch"
-                            {% if request.MOBILE %}
-                         style="width: 100vw"
-                            {% endif %}>
-                        {{ form.remember_me(class="form-check-input", id="remember-me") }}
-                        {{ form.remember_me.label(class="form-check-label", for="remember-me") }}
-                    </div>
-                </td>
-                <td style="text-align: right">
-                    <a href="#" onclick="resetPassword($('#email').val())" class="normal-link">
-                        Забыли пароль?
-                    </a>
-                </td>
+                <tr>
+                    <td>
+                        <div class="form-check form-switch"
+                                {% if request.MOBILE %}
+                             style="width: 100vw"
+                                {% endif %}>
+                            {{ form.remember_me(class="form-check-input", id="remember-me") }}
+                            {{ form.remember_me.label(class="form-check-label", for="remember-me") }}
+                        </div>
+                    </td>
+                    <td style="text-align: right">
+                        <a href="#" onclick="resetPassword($('#email').val())" class="normal-link">
+                            Забыли пароль?
+                        </a>
+                    </td>
+                </tr>
             </table>
 
             <br>

@@ -16,3 +16,4 @@ eventlet
 alembic
 sqlalchemy-serializer
 email-validator
+Jinja2

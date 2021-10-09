@@ -57,6 +57,9 @@ db_session.global_init('db/database.sqlite')
 
 
 def main():
+    from tools.tools import update_teachers_images
+    update_teachers_images()
+
     port = int(os.environ.get('PORT', 80))
     socket_.run(app, host='0.0.0.0', port=port)
 

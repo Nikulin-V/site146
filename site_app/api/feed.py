@@ -46,6 +46,7 @@ def getNews(json=None):
 
     db_sess = db_session.create_session()
 
+    # noinspection PyUnresolvedReferences
     news = db_sess.query(News).order_by(News.date.desc()).filter(
         News.theme_title == theme
     ).all()

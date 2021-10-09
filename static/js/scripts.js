@@ -140,14 +140,6 @@ function createParagraph(message) {
     return p
 }
 
-function fillCompanies() {
-    stocksJson = stocks.getJson['stocks']
-    for (companyId = 0; companyId < stocksJson.length; companyId++) {
-        companyTitle = stocksJson[companyId]['company']
-        $("#companies-select").append(new Option(companyTitle, companyTitle))
-    }
-}
-
 function closeModalAndRenderPage() {
     closeModal()
     renderPage()
