@@ -1,0 +1,47 @@
+{% extends "site/base.html" %}
+
+{% block content %}
+
+    <script>
+        function showTeachersMenu() {
+            menu = `<div class="list-group">
+                    {% for id, surname, name, patronymic, subject, about in teachers %}
+                        {% set fio = surname.capitalize() + ' ' + name[0].capitalize() + '. ' +
+                                   patronymic[0].capitalize() + '.' %}
+                        <a href="#{{ id }}"
+                           class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                {{ fio }}
+                            </div>
+                            <span class="badge bg-info text-dark rounded-pill">{{ subject }}</span>
+                        </a>
+                    {% endfor %}
+                    </div>`
+            showModal(menu, 'Руководство и учителя', [])
+        }
+    </script>
+
+    <div id="dataWindow">
+        <a class="btn btn-info"
+           style="z-index: 146; position: sticky; margin: 5px 0 5px 0; top: 5px;
+                left: calc((100vw - 168px)/2) "
+           onclick="showTeachersMenu()">Руководство и учителя</a>
+        <hr class="header-hr" style="margin-bottom: 5px">
+        {% for id, surname, name, patronymic, subject, about in teachers %}
+            <div id="{{ id }}" class="card mb-3">
+                <img class="img-fluid rounded"
+                        {{ 'style=width:55%;align-self:center' if not request.MOBILE else '' }}
+                     src="{{ url('static', filename='/images/teachers/' + id + '.png') }}"
+                     alt="Нет фото">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        {{ surname + ' ' + name + ' ' + patronymic }}
+                        <span class="badge bg-info text-dark">{{ subject }}</span>
+                    </h4>
+                    <p class="card-text">{{ about }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

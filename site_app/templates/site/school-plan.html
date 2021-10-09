@@ -1,0 +1,65 @@
+{% extends "site/base.html" %}
+
+{% block content %}
+<style>
+    .scheme rect.active {
+        fill: #FF8C0B !important;
+    }
+
+    .nav_item_style {
+        font-size: 20px;
+        font-family: Impact;
+    }
+        {% if request.MOBILE %}
+            main {
+                padding: 0 !important;
+            }
+        {% endif %}
+
+        body {
+            background-image: url({{ url('static', filename='images/index-background.jpg') }});
+            background-attachment: fixed;
+        }
+</style>
+{% if not request.MOBILE %}
+    <h1 style="margin: 70px; color: white; text-align: center;">План школы</h1>
+    <div style="background-color: white; padding: 20px 40px;">
+{% else %}
+    <h2 style="margin: 10px; color: white; text-align: center;">План школы</h2>
+    <div style="background-color: white; padding: 5px 10px; margin: 0 15px 0 15px; font-size: .7em;">
+{% endif %}
+        <ul class="nav nav-tabs" id="FloorSelect" role="tablist">
+            <li class="nav-item nav_item_style" role="presentation">
+                <button class="nav-link active" id="floor1-tab" data-bs-toggle="tab"
+                        data-bs-target="#floor1" type="button" role="tab" aria-controls="floor1"
+                        aria-selected="true">Этаж 1
+                </button>
+            </li>
+            <li class="nav-item nav_item_style" role="presentation">
+                <button class="nav-link" id="floor2-tab" data-bs-toggle="tab"
+                        data-bs-target="#floor2" type="button" role="tab" aria-controls="floor2"
+                        aria-selected="false">Этаж 2
+                </button>
+            </li>
+            <li class="nav-item nav_item_style" role="presentation">
+                <button class="nav-link" id="floor3-tab" data-bs-toggle="tab"
+                        data-bs-target="#floor3" type="button" role="tab" aria-controls="floor3"
+                        aria-selected="false">Этаж 3
+                </button>
+            </li>
+        </ul>
+<div class="tab-content" id="FloorSelectContent">
+    <div class="tab-pane fade show active" id="floor1" role="tabpanel" aria-labelledby="floor1-tab">
+        <object type="image/svg+xml" data="/static/images/floor1.svg"
+                id="floorplan1"></object>
+    </div>
+    <div class="tab-pane fade" id="floor2" role="tabpanel" aria-labelledby="floor2-tab">
+        <object type="image/svg+xml" data="/static/images/floor2.svg" id="floorplan2"></object>
+    </div>
+    <div class="tab-pane fade" id="floor3" role="tabpanel" aria-labelledby="floor3-tab">
+        <object type="image/svg+xml" data="/static/images/floor3.svg" id="floorplan"></object>
+
+    </div>
+</div>
+</div>
+{% endblock %}

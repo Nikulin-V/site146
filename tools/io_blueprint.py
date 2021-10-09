@@ -27,9 +27,6 @@ class IOBlueprint:
             def wrap(io):
                 @io.on(key, namespace=self.namespace)
                 def wrapped(*args, **kwargs):
-                    from app import scheduler
-                    if not scheduler.works:
-                        scheduler.run()
                     if f.__name__ in data_changes_functions:
                         emit('renderPage', broadcast=True)
                     return f(*args, **kwargs)

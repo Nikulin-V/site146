@@ -3,7 +3,6 @@ from uuid import uuid4
 
 import sqlalchemy
 from flask_login import UserMixin
-from sqlalchemy.orm import relationship
 from sqlalchemy_serializer import SerializerMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -38,6 +37,7 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
         db_sess = db_session.create_session()
         for role_name in roles:
             if not self.has_role(role_name):
+                # noinspection PyArgumentList
                 role = RolesUsers(
                     user_id=self.id,
                     role_id=db_sess.query(Role.id).filter(Role.name == role_name)
@@ -45,6 +45,7 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
                 db_sess.add(role)
         db_sess.commit()
 
+    # noinspection PyUnresolvedReferences
     def clear_roles(self, roles=None):
         db_sess = db_session.create_session()
         if roles is None:

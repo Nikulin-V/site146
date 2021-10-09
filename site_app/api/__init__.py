@@ -11,4 +11,6 @@ socket = IOBlueprint()
 clients_sid = dict()
 
 from .sockets import registerUserSessionSID
-from .users import createUser, getUsers, editUser, deleteUser
+from .users import createUser, getUsers, editUser, deleteUser, hasEditPermission, isAuthorized
+from .reset_password import reset_password
+from .feed import getNews, editNews, createNews, deleteNews

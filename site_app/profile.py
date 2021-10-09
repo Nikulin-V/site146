@@ -26,7 +26,6 @@ def profile():
         user.name = form.name.data
         user.patronymic = form.patronymic.data
         user.email = form.email.data
-        user.role = form.role.data
 
         if form.old_password.data or form.password.data or form.password_again.data:
             if not form.old_password.data:
@@ -51,5 +50,4 @@ def profile():
     return render_template("site/profile.html",
                            title='Профиль',
                            form=form,
-                           message=message,
-                           btn_label='Сохранить')
+                           message=message)

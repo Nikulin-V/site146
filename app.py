@@ -2,7 +2,7 @@
 import os
 
 import eventlet
-from flask import Flask, redirect, Blueprint
+from flask import Flask, Blueprint
 from flask_admin import Admin
 from flask_login import LoginManager
 from flask_mail import Mail
@@ -14,7 +14,7 @@ from flask_sqlalchemy import SQLAlchemy
 import site_app
 from config import SERVER_NAME, SCHEME
 from data import db_session
-from tools.scheduler import Scheduler
+from tools.tools import get_header_structure
 from tools.url import url
 
 eventlet.monkey_patch()
@@ -28,7 +28,14 @@ app.config.update(
     SESSION_COOKIE_DOMAIN=SERVER_NAME,
     SESSION_COOKIE_HTTPONLY=False,
     MAX_CONTENT_LENGTH=32 * 1024 * 1024,
-    PREFERRED_URL_SCHEME=SCHEME
+    PREFERRED_URL_SCHEME=SCHEME,
+    MAIL_SERVER='smtp.yandex.ru',
+    MAIL_PORT=465,
+    MAIL_USE_TLS=False,
+    MAIL_USE_SSL=True,
+    MAIL_USERNAME='no-reply@area-146.tk',
+    MAIL_DEFAULT_SENDER='no-reply@area-146.tk',
+    MAIL_PASSWORD='school146noreply'
 )
 app.config.from_pyfile('config-extended.py')
 
@@ -36,7 +43,6 @@ socket_ = SocketIO(app, cors_allowed_origins="*")
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-scheduler = Scheduler()
 mail = Mail(app)
 
 Mobility(app)
@@ -44,15 +50,16 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 app.jinja_env.globals.update(url=url)
+app.jinja_env.globals.update(header_structure=get_header_structure)
 db_session.global_init('db/database.sqlite')
 
 
 def main():
-    # noinspection PyUnresolvedReferences
-    db_sess = db_session.create_session()
-    db.create_all()
-    port = int(os.environ.get('PORT', 443))
-    socket_.run(app, host='0.0.0.0', port=port, keyfile='private.key', certfile='certificate.crt')
+    from tools.tools import update_teachers_images
+    update_teachers_images()
+
+    port = int(os.environ.get('PORT', 80))
+    socket_.run(app, host='0.0.0.0', port=port)
 
 
 def add_admin_panel():
@@ -68,11 +75,6 @@ def add_admin_panel():
 def load_user(user_id):
     db_sess = db_session.create_session()
     return db_sess.query(User).get(user_id)
-
-
-@app.route('/secrets-of-literacy')
-def secrets_of_literacy():
-    return redirect('https://secrets-of-literacy.wixsite.com/website')
 
 
 if __name__ == '__main__':

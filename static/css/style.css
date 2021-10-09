@@ -82,7 +82,7 @@ main {
 }
 
 #logo-background {
-    background: url(../images/Wolf.png) no-repeat;
+    background: url(../images/Logo-sqr.png) no-repeat;
     background-size: 250px auto;
     top: 57%;
     left: 40%;
@@ -255,7 +255,7 @@ main {
 }
 
 .dropdown-item:active {
-    background-color: #17a2b8;
+    background-color: #86cfda;
 }
 
 .btn-danger {
@@ -266,3 +266,9 @@ main {
     border-width: medium;
 }
 
+.outline-danger {
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+}
