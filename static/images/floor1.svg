@@ -29,9 +29,33 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g7427-2" />
+     inkscape:current-layer="layer1" />
   <defs
      id="defs2">
+    <rect
+       x="2436"
+       y="312"
+       width="516"
+       height="324"
+       id="rect16295" />
+    <rect
+       x="2494.4086"
+       y="345.42068"
+       width="351.60486"
+       height="110.93017"
+       id="rect11832" />
+    <rect
+       x="2494.4086"
+       y="345.42068"
+       width="351.60486"
+       height="110.93017"
+       id="rect8702" />
+    <rect
+       x="2494.4086"
+       y="345.42068"
+       width="351.60486"
+       height="110.93017"
+       id="rect5330" />
     <rect
        x="2143.6498"
        y="1308.123"
@@ -492,10 +516,10 @@
          style="font-style:normal;font-weight:normal;font-size:64px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect24401);fill:#000000;fill-opacity:1;stroke:none"><tspan
            x="693.14648"
            y="104.70508"
-           id="tspan3145">↑ на 2 и </tspan><tspan
+           id="tspan19549">↑ на 2 и </tspan><tspan
            x="693.14648"
            y="184.70508"
-           id="tspan3147">3 этажи</tspan></text>
+           id="tspan19551">3 этажи</tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.33755921,0,0,0.33439517,-43.592078,-369.56035)"
@@ -503,10 +527,10 @@
          style="font-style:normal;font-weight:normal;font-size:64px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect24401-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"><tspan
            x="693.14648"
            y="104.70508"
-           id="tspan3149">↑ на 2 и </tspan><tspan
+           id="tspan19553">↑ на 2 и </tspan><tspan
            x="693.14648"
            y="184.70508"
-           id="tspan3151">3 этажи</tspan></text>
+           id="tspan19555">3 этажи</tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.33755921,0,0,0.33439517,-389.25179,-638.05826)"
@@ -519,7 +543,7 @@
          style="font-style:normal;font-weight:normal;font-size:120px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect20316);fill:#ff0505;fill-opacity:1;stroke:none"><tspan
            x="2143.6504"
            y="1414.2949"
-           id="tspan3153">✚</tspan></text>
+           id="tspan19557">✚</tspan></text>
       <rect
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:5.37558;stroke-miterlimit:4;stroke-dasharray:none"
          id="rect38030"
@@ -628,30 +652,6 @@
        height="56.487041"
        x="944.39288"
        y="282.46637" />
-    <g
-       id="g7427-35"
-       transform="matrix(1.4413198,0,0,2.1567156,470.22427,398.76652)"
-       style="display:inline;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none">
-      <rect
-         style="fill:#1716ff;fill-opacity:1;stroke:none;stroke-width:0.35707"
-         id="rect1721-3"
-         width="82.346359"
-         height="17.199543"
-         x="302.73828"
-         y="-131.27014" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:16.1267px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.502872"
-         x="302.85309"
-         y="-119.9935"
-         id="text4903-00"
-         transform="scale(1.0047199,0.99530228)"><tspan
-           sodipodi:role="line"
-           id="tspan4901-24"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.1267px;font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono';fill:#ffffff;fill-opacity:1;stroke-width:0.502872"
-           x="302.85309"
-           y="-119.9935">столовая</tspan></text>
-    </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:5.37558;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 941.62923,428.10245 c 133.78277,1.20784 133.78277,1.20784 133.78277,1.20784"
@@ -724,10 +724,10 @@
        style="font-style:normal;font-weight:normal;font-size:64px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect24401-9-9-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"><tspan
          x="693.14648"
          y="104.70508"
-         id="tspan3155">↑ на 2 </tspan><tspan
+         id="tspan19559">↑ на 2 </tspan><tspan
          x="693.14648"
          y="184.70508"
-         id="tspan3157">этаж</tspan></text>
+         id="tspan19561">этаж</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.33755921,0,0,0.33439517,841.29394,247.12868)"
@@ -735,10 +735,10 @@
        style="font-style:normal;font-weight:normal;font-size:64px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect24401-9-9-5-1);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.49676;stroke-miterlimit:4;stroke-dasharray:none"><tspan
          x="693.14648"
          y="104.70508"
-         id="tspan3159">↑ на 2 </tspan><tspan
+         id="tspan19563">↑ на 2 </tspan><tspan
          x="693.14648"
          y="184.70508"
-         id="tspan3161">этаж</tspan></text>
+         id="tspan19565">этаж</tspan></text>
     <path
        id="rect1320"
        style="display:inline;fill:#ffffff;stroke:#000000;stroke-width:6.05555;stroke-miterlimit:4;stroke-dasharray:none"
@@ -1135,5 +1135,43 @@
            x="302.85309"
            y="-119.9935">библиотека</tspan></text>
     </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.33755921,0,0,0.33439517,64.55634,0.14714973)"
+       id="text5328"
+       style="font-style:normal;font-weight:normal;font-size:86.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect5330);fill:#000000;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.33755921,0,0,0.33439517,64.55634,0.14714973)"
+       id="text8700"
+       style="font-style:normal;font-weight:normal;font-size:85.3333px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect8702);fill:#ffffff;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.33755921,0,0,0.33439517,64.55634,0.14714973)"
+       id="text11830"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect11832);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="2494.4082"
+         y="531.85153"
+         id="tspan19569">С<tspan
+   dx="27.929688 49.708313 52.208313 54.541641 52.208313 50.291641 52.291656"
+   style="font-size:85.3333px"
+   id="tspan19567">толовая</tspan></tspan></text>
+    <rect
+       style="fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:5.39465;stroke-opacity:1"
+       id="rect18837"
+       width="202.37526"
+       height="45.477741"
+       x="872.15826"
+       y="101.80328" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.45568007,0,0,0.45140885,-235.86271,-45.557442)"
+       id="text16293"
+       style="font-style:normal;font-weight:normal;font-size:90.6667px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect16295);fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1"><tspan
+         x="2436"
+         y="395.11114"
+         id="tspan19573"><tspan
+           style="font-family:'Noto Mono';-inkscape-font-specification:'Noto Mono'"
+           id="tspan19571">столовая</tspan></tspan></text>
   </g>
 </svg>
