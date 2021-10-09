@@ -12,6 +12,7 @@ from flask_socketio import emit
 
 from data import db_session
 from data.news import Sector, Theme
+from data.teachers import Teacher
 
 
 def generate_random_string(length):
@@ -109,3 +110,14 @@ def has_edit_permission(theme: Union[Theme, str]):
         return False
 
     return current_user.has_role(theme.editors_role.name)
+
+
+def update_teachers_images():
+    db_sess = db_session.create_session()
+
+    for teacher in db_sess.query(Teacher).all():
+        if teacher.photo is not None:
+            name = f'static/images/teachers/{teacher.id}.png'
+            f = open(name, 'wb')
+            f.write(teacher.photo)
+            f.close()

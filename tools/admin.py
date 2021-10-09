@@ -4,11 +4,10 @@ from flask_admin.contrib.sqla import ModelView
 from flask_login import current_user
 
 from data import db_session
-from data.classes import Class, Group, ClassLesson, GroupLesson
-from data.homeworks import Homework
 from data.news import News, Sector, Theme
 from data.roles import Role, RolesUsers
 from data.scheduled_job import ScheduledJob
+from data.teachers import Teacher
 from data.users import User
 
 
@@ -40,12 +39,16 @@ class NewsView(BaseModelView):
     column_exclude_list = ['liked_ids']
 
 
+class TeacherView(BaseModelView):
+    column_exclude_list = ['photo']
+
+
 def connect_models(admin):
     db_sess = db_session.create_session()
 
     admin_models = [(User, UserView), RolesUsers, Role, ScheduledJob]
     content_models = [Sector, Theme, (News, NewsView)]
-    edu_models = [Class, Group, ClassLesson, GroupLesson, Homework]
+    edu_models = [(Teacher, TeacherView)]
 
     categories = {
         'Admin': admin_models,

@@ -5,6 +5,7 @@ from flask_login import login_required, current_user
 from site_app.api import clients_sid, socket
 
 
+# noinspection PyUnresolvedReferences
 @socket.on('registerUserSessionSID')
 @login_required
 def registerUserSessionSID():

@@ -45,6 +45,7 @@ class Theme(SqlAlchemyBase):
     viewers_role_id = sqlalchemy.Column(sqlalchemy.String, sqlalchemy.ForeignKey("roles.id"))
     viewers_role = relationship("Role", primaryjoin="Theme.viewers_role_id == Role.id")
     is_feed = sqlalchemy.Column(sqlalchemy.Boolean, default=True)
+    is_static = sqlalchemy.Column(sqlalchemy.Boolean, default=True)
 
     def __str__(self):
         return self.title
