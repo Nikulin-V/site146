@@ -19,11 +19,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
           rel="stylesheet">
     <div>
-        <h1 style="text-align: center;font-size: 100px;color: white;margin-top: 50px">МАОУ СОШ
-            №146</h1>
+        {% if not request.MOBILE %}
+            <h1 style="text-align: center;font-size: 100px;color: white;margin-top: 50px">МАОУ СОШ
+                №146</h1>
+        {% else %}
+            <h1 style="text-align: center;font-size: 35px;color: white;margin-top: 30px">МАОУ СОШ
+                №146</h1>
+        {% endif %}
     </div>
-    <div style="background-color: rgba(0,0,0,.1);border: 3px solid white;width: {{ width }};display: block;border-radius: 10px; margin: 30px auto auto;">
-        <p style="color:white; font-family: Montserrat, monospace; font-size: 1.2em; vertical-align: baseline; margin: 10px">
+    <div style="background-color: rgba(0,0,0,.3);border: 3px solid white;width: {{ width }};
+            display: block;border-radius: 10px; margin: 30px auto auto;">
+        <p style="color:white; font-family: Montserrat, monospace;
+                {{ 'font-size: 1.2em;' if not request.MOBILE else '' }}
+                vertical-align: baseline; margin: 10px">
             Школа №146 является лидирующей в Пермского крае.<br>
             Она входит в сотню лучших по конкурентоспособности школ России.<br>
             Главная гордость школы №146 – её замечательные выпускники, которые поступают в лучшие

@@ -28,10 +28,10 @@
            onclick="showTeachersMenu()">Руководство и учителя</a>
         <hr class="header-hr" style="margin-bottom: 5px">
         {% for id, surname, name, patronymic, subject, about in teachers %}
-            <div id="{{ id }}" class="card" style="margin-bottom: 10px">
-                <img class="img img-fluid card-img-top"
+            <div id="{{ id }}" class="card mb-3">
+                <img class="img-fluid rounded"
+                        {{ 'style=width:55%;align-self:center' if not request.MOBILE else '' }}
                      src="{{ url('static', filename='/images/teachers/' + id + '.png') }}"
-                     style="display: block; margin: auto"
                      alt="Нет фото">
                 <div class="card-body">
                     <h4 class="card-title">
