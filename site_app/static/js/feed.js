@@ -48,7 +48,7 @@ function addNews(page = 0, isFullUpdate = true) {
                 for (newsId = 0; newsId < newsList.length; newsId++) {
                     const n = Object(newsList[newsId])
                     if (n.picture)
-                        picture = `<img id="${n.id}-picture" src="${n.picture}" alt="Неверная ссылка на изображение новости" class="card-img-top">`
+                        picture = `<img id="${n.id}-picture" src="${n.picture}" alt="Неверная ссылка на изображение новости" class="card-img-top" ${isMobile() ? '' : 'style="width: 55%; align-self: center"'}>`
                     else
                         picture = ''
                     if (data['editPermission'] && users.authorized) {
