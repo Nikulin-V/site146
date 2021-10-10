@@ -1,6 +1,6 @@
 #  Nikulin Vasily © 2021
-HOST = 's146.ru'
-DEV_HOST = 's146.tk'
+HOST = 'site146.herokuapp.com'
+DEV_HOST = 'site146.herokuapp.com'
 SERVER_NAME = DEV_HOST
 SCHEME = 'http'
 
