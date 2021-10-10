@@ -2,7 +2,7 @@
 HOST = 'site146.herokuapp.com'
 DEV_HOST = 'site146.herokuapp.com'
 SERVER_NAME = DEV_HOST
-SCHEME = 'http'
+SCHEME = 'https'
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp', 'ico', 'webp'}
 
