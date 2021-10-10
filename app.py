@@ -8,7 +8,6 @@ from flask_login import LoginManager
 from flask_mail import Mail
 from flask_migrate import Migrate
 from flask_mobility.mobility import Mobility
-from flask_ngrok import run_with_ngrok
 from flask_socketio import SocketIO
 from flask_sqlalchemy import SQLAlchemy
 
@@ -39,7 +38,6 @@ app.config.update(
     MAIL_PASSWORD='school146noreply'
 )
 app.config.from_pyfile('config-extended.py')
-run_with_ngrok(app)
 
 socket_ = SocketIO(app, cors_allowed_origins="*")
 
